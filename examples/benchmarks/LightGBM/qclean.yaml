@@ -1,0 +1,14 @@
+qclean:
+  input_parquet: "~/.qlib/qlib_data/cn_data"
+  output_provider_dir: "~/qlib_clean/alpha158_provider"
+
+  # ---- 这里是你模块的配置 ----
+  ohlc_strategy: "ffill"      # ffill / prev_close / interp / drop
+  volume_strategy: "ffill"    # zero / mean / ffill
+
+  calendar_align:
+    freq: "1D"
+    method: "forward"
+
+  anomaly:
+    zscore: 5
